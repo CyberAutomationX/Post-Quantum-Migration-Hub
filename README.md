@@ -16,7 +16,10 @@ Vendor-neutral guidance, templates, checklists, and migration playbooks for orga
 - PQC Readiness Checklist
 - Cloud & IAM Migration Playbook
 - SCADA / ICS Readiness Checklist
-- Reference Map
+- Crypto-Agility Assessment Template
+- PQC Cloud & Workload Identity Migration Checklist
+- SCADA/ICS PQC Migration Continuity Checklist
+- NIST & CISA Reference Library
 
 ---
 
@@ -78,6 +81,38 @@ Operational technology-focused guidance covering:
 - Legacy protocol assessments
 - Migration planning activities
 
+### Crypto-Agility Assessment Template
+
+A structured framework for:
+
+- Quantum-vulnerable asset identification
+- Migration readiness scoring
+- P1/P2/P3 prioritization
+- Long-lived data identification
+- Supplier readiness assessment
+- Crypto-agility maturity tracking
+
+### PQC Cloud & Workload Identity Migration Checklist
+
+Implementation-focused guidance covering:
+
+- PKI modernization
+- Certificate lifecycle management
+- Workload identities
+- Machine authentication
+- TLS and mTLS dependencies
+- SaaS cryptographic dependencies
+
+### SCADA/ICS PQC Migration Continuity Checklist
+
+Operational technology migration guidance covering:
+
+- Legacy protocol assessments
+- Vendor roadmap management
+- Gateway dependencies
+- Performance validation
+- Rollback planning
+- Operational continuity safeguards
 ---
 
 ## Objectives
@@ -113,8 +148,8 @@ This resource hub aligns with publicly available guidance including:
 
 ```text
 index.html                     Public landing page
-downloads/                     Templates and workbooks
-resources/                     Checklists and playbooks
+downloads/                     Templates, assessments, checklists and workbooks
+resources/                     Playbooks, implementation guidance and resource pages
 assets/                        Images and styling resources
 source-map.json                Standards mapping
 release-notes.md               Release history
@@ -125,7 +160,11 @@ publishing-guide.md            Deployment guidance
 
 ## Version
 
-Current Release: v1.0
+New in v1.1.0
+
+- Crypto-Agility Assessment Template
+- PQC Cloud & Workload Identity Migration Checklist
+- SCADA/ICS PQC Migration Continuity Checklist
 
 Release Date: June 2026
 
