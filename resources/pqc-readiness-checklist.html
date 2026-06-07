@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SecureAzCloud PQC Readiness Checklist</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>SecureAzCloud PQC Readiness Checklist</h1>
+    <p>A reusable checklist for planning and governing post-quantum cryptography readiness.</p>
+    <div class="badges">
+      <span class="badge">SecureAzCloud</span>
+      <span class="badge">Vendor-neutral</span>
+      <span class="badge">NIST-aligned</span>
+      <span class="badge">Version 1.0</span>
+      <span class="badge">Updated 2026-06-07</span>
+    </div>
+  </div>
+</header>
+<main>
+<nav class="hubnav">
+  <a href="../index.html">Hub Home</a>
+  <a href="../resources/pqc-readiness-checklist.html">PQC Readiness Checklist</a>
+  <a href="../resources/cloud-iam-migration-playbook.html">Cloud/IAM Playbook</a>
+  <a href="../resources/scada-ics-pqc-checklist.html">SCADA/ICS Checklist</a>
+  <a href="../resources/reference-map.html">Reference Map</a>
+</nav>
+
+<section>
+<p class="lead">Use this checklist to determine whether an organization is ready to plan, pilot, and govern a post-quantum cryptography migration. Readiness means the organization can identify cryptographic dependencies, prioritize risk, coordinate suppliers, test changes safely, and maintain evidence of decisions.</p>
+<div class="notice"><strong>Practical definition of ready:</strong> the organization does not need to complete every PQC cutover immediately, but it should know where vulnerable public-key cryptography exists, who owns each dependency, which systems need early action, and how migration will be validated.</div>
+</section>
+<section>
+<h2>Readiness checklist</h2>
+<table class="checklist">
+<thead><tr><th>Domain</th><th>Checklist item</th><th>Acceptance criteria</th><th>Evidence</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Governance</td><td>Accountable owner and working group are assigned.</td><td>Named owner, RACI, cadence, and decision log exist.</td><td>Program charter; RACI; meeting notes.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Governance</td><td>Crypto-agility policy is published.</td><td>Policy requires configurable algorithms, approved cryptographic libraries, migration-friendly architectures, and exception handling.</td><td>Policy document; architecture standard.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Inventory</td><td>Cryptographic inventory is established.</td><td>Inventory captures applications, certificates, protocols, libraries, services, devices, identities, signing keys, HSM/KMS, and suppliers.</td><td>Completed inventory template with evidence links.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Inventory</td><td>Unknown cryptography is tracked as discovery debt.</td><td>Assets with missing algorithm, library, certificate, or supplier information have owners and due dates.</td><td>Discovery debt register.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Data risk</td><td>Long-life sensitive data is prioritized.</td><td>Data shelf life, sensitivity, regulatory requirements, and store-now/decrypt-later exposure are recorded.</td><td>Data classification and retention mapping.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Architecture</td><td>Crypto agility is classified for every priority asset.</td><td>Hard-coded algorithms, fixed certificate profiles, non-upgradeable libraries, and protocol constraints are documented.</td><td>Crypto agility field in inventory.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>PKI</td><td>Certificate authority and trust-store readiness is assessed.</td><td>CA profiles, trust anchors, renewal automation, revocation, relying-party compatibility, and chain-size impact are understood.</td><td>PKI assessment and certificate profile matrix.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Cloud/IAM</td><td>Identity and federation crypto dependencies are mapped.</td><td>SAML, OIDC/OAuth, JWT, workload identity, mTLS, SSH, service identity, and signing paths are documented.</td><td>Cloud/IAM dependency map.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Network</td><td>Transport crypto is mapped.</td><td>TLS, VPN, SSH, remote access, service mesh, API gateway, and database driver dependencies are documented.</td><td>Network crypto inventory.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Suppliers</td><td>Critical supplier PQC roadmaps are requested.</td><td>Vendors disclose PQC support, upgrade path, cryptographic dependencies, update mechanism, and product support windows.</td><td>Supplier responses and contract language.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Testing</td><td>Interoperability and performance testing is planned.</td><td>Tests include handshake behavior, certificate/signature size, latency, fragmentation, logs, client compatibility, and rollback.</td><td>Test plan and pilot report.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Operations</td><td>Monitoring and runbooks are updated.</td><td>New protocols, certificates, signing changes, exceptions, and rollback paths are visible to operations teams.</td><td>SOC rules; runbooks; change records.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Scoring guidance</h2>
+<table>
+<thead><tr><th>Score</th><th>Meaning</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>0–25%</td><td>Initial</td><td>Start with cryptographic discovery, governance ownership, and supplier roadmap requests.</td></tr>
+<tr><td>26–50%</td><td>Developing</td><td>Complete priority inventories and classify crypto agility blockers.</td></tr>
+<tr><td>51–75%</td><td>Managed</td><td>Build migration backlog, pilot plan, monitoring updates, and change-control procedure.</td></tr>
+<tr><td>76–100%</td><td>Operationalized</td><td>Run recurring discovery, maintain exception governance, and refresh plans as standards, protocols, and products evolve.</td></tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Minimum evidence package</h2>
+<ul>
+<li>Cryptographic inventory export for priority assets.</li>
+<li>Risk scoring method and prioritized backlog.</li>
+<li>PQC migration owner, RACI, and decision log.</li>
+<li>PKI, IAM, cloud, application, network, and OT/ICS dependency maps.</li>
+<li>Supplier roadmap and support-window tracker.</li>
+<li>Non-production pilot test plan and results.</li>
+<li>Exception register with compensating controls and expiration dates.</li>
+</ul>
+</section>
+
+<section id="references">
+<h2>Reference sources</h2>
+<table>
+<thead><tr><th>Source</th><th>Public URL</th></tr></thead>
+<tbody>
+<tr><td>NIST FIPS 203 — Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM)</td><td><a href="https://csrc.nist.gov/pubs/fips/203/final">https://csrc.nist.gov/pubs/fips/203/final</a></td></tr>
+<tr><td>NIST FIPS 204 — Module-Lattice-Based Digital Signature Standard (ML-DSA)</td><td><a href="https://csrc.nist.gov/pubs/fips/204/final">https://csrc.nist.gov/pubs/fips/204/final</a></td></tr>
+<tr><td>NIST FIPS 205 — Stateless Hash-Based Digital Signature Standard (SLH-DSA)</td><td><a href="https://csrc.nist.gov/pubs/fips/205/final">https://csrc.nist.gov/pubs/fips/205/final</a></td></tr>
+<tr><td>NIST PQC Standardization Project</td><td><a href="https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization">https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization</a></td></tr>
+<tr><td>NIST NCCoE Migration to Post-Quantum Cryptography</td><td><a href="https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc">https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc</a></td></tr>
+<tr><td>NIST CSWP 39 — Considerations for Achieving Crypto Agility</td><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.39.pdf">https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.39.pdf</a></td></tr>
+<tr><td>NIST Cybersecurity Framework 2.0 announcement and resources</td><td><a href="https://www.nist.gov/news-events/news/2024/02/nist-releases-version-20-landmark-cybersecurity-framework">https://www.nist.gov/news-events/news/2024/02/nist-releases-version-20-landmark-cybersecurity-framework</a></td></tr>
+<tr><td>NIST SP 800-53 Rev. 5 — Security and Privacy Controls</td><td><a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final">https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final</a></td></tr>
+<tr><td>NIST SP 800-82 Rev. 3 — Guide to Operational Technology Security</td><td><a href="https://csrc.nist.gov/pubs/sp/800/82/r3/final">https://csrc.nist.gov/pubs/sp/800/82/r3/final</a></td></tr>
+<tr><td>NIST SP 800-161 Rev. 1 Update 1 — Cybersecurity Supply Chain Risk Management</td><td><a href="https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final">https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final</a></td></tr>
+<tr><td>CISA — Quantum-Readiness: Migration to Post-Quantum Cryptography</td><td><a href="https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography">https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography</a></td></tr>
+<tr><td>CISA — Post-Quantum Considerations for Operational Technology</td><td><a href="https://www.cisa.gov/resources-tools/resources/post-quantum-considerations-operational-technology">https://www.cisa.gov/resources-tools/resources/post-quantum-considerations-operational-technology</a></td></tr>
+<tr><td>CISA — Product Categories for Technologies that Use PQC Standards</td><td><a href="https://www.cisa.gov/resources-tools/resources/product-categories-technologies-use-post-quantum-cryptography-standards">https://www.cisa.gov/resources-tools/resources/product-categories-technologies-use-post-quantum-cryptography-standards</a></td></tr>
+</tbody>
+</table>
+<p class="small">This resource hub is an independent, vendor-neutral planning aid. It is not a NIST, CISA, or government publication and does not imply endorsement by any public agency.</p>
+</section>
+</main>
+<footer>
+  SecureAzCloud PQC Migration Resource Hub v1.0. Use as a planning and communication resource; adapt controls and sequencing to organizational risk, architecture, and operational constraints.
+</footer>
+</body>
+</html>

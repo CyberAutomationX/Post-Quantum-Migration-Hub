@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SecureAzCloud SCADA/ICS PQC Readiness Checklist</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>SecureAzCloud SCADA/ICS PQC Readiness Checklist</h1>
+    <p>A safety-first checklist for post-quantum cryptography readiness in operational technology environments.</p>
+    <div class="badges">
+      <span class="badge">SecureAzCloud</span>
+      <span class="badge">Vendor-neutral</span>
+      <span class="badge">NIST-aligned</span>
+      <span class="badge">Version 1.0</span>
+      <span class="badge">Updated 2026-06-07</span>
+    </div>
+  </div>
+</header>
+<main>
+<nav class="hubnav">
+  <a href="../index.html">Hub Home</a>
+  <a href="../resources/pqc-readiness-checklist.html">PQC Readiness Checklist</a>
+  <a href="../resources/cloud-iam-migration-playbook.html">Cloud/IAM Playbook</a>
+  <a href="../resources/scada-ics-pqc-checklist.html">SCADA/ICS Checklist</a>
+  <a href="../resources/reference-map.html">Reference Map</a>
+</nav>
+
+<section>
+<p class="lead">This checklist supports safety-first planning for PQC readiness in SCADA, ICS, and broader operational technology environments. It emphasizes discovery, vendor coordination, lab validation, compensating controls, and lifecycle planning before production changes.</p>
+<div class="notice warning"><strong>Safety-first rule:</strong> do not introduce new cryptographic settings, certificates, firmware, protocol changes, or active scans into production OT without approved management of change, vendor validation, rollback planning, and an operations-approved maintenance window.</div>
+</section>
+<section>
+<h2>OT/ICS PQC readiness checklist</h2>
+<table class="checklist">
+<thead><tr><th>Area</th><th>Checklist item</th><th>Safety / operational consideration</th><th>Evidence</th><th>Status</th></tr></thead>
+<tbody><tr><td>Governance</td><td>Create OT-specific PQC change governance.</td><td>No production change without safety impact assessment, vendor support, MOC approval, rollback plan, and maintenance window.</td><td>MOC procedure; safety approval; rollback checklist.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Inventory</td><td>Discover OT cryptography safely.</td><td>Prefer passive discovery, configuration review, certificate export, vendor documentation, and engineering workstation review before any active scanning.</td><td>OT crypto inventory; discovery method log.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Criticality</td><td>Classify assets by process and safety impact.</td><td>Prioritize by process function, downtime tolerance, safety consequence, vendor support, data sensitivity, and remote exposure.</td><td>Criticality and safety-impact matrix.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Remote access</td><td>Map encrypted remote access paths.</td><td>Document VPN, jump hosts, privileged access, vendor access, cloud connectors, modems, bastions, and MFA dependencies.</td><td>Remote access architecture map.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Industrial protocols</td><td>Review protocol security capabilities.</td><td>Identify where TLS, certificates, signed firmware, secure boot, or application-layer security are enabled, unsupported, or vendor-dependent.</td><td>Protocol and device security matrix.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>PKI</td><td>Map OT certificates and trust stores.</td><td>Include historians, HMIs, engineering workstations, OPC UA, gateways, web interfaces, remote access systems, and device certificates.</td><td>Certificate and trust-store inventory.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Suppliers</td><td>Request OT supplier PQC roadmaps.</td><td>Confirm firmware/software upgrade paths, key/certificate size limits, protocol support, validation process, and support windows.</td><td>Supplier response tracker.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Testing</td><td>Use lab or representative test environment.</td><td>Never test unvalidated cryptographic changes directly on production control systems.</td><td>Lab plan; test assets; acceptance criteria.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Performance</td><td>Validate constrained-device impact.</td><td>Measure latency, CPU/memory, packet size, fragmentation, session recovery, and failure behavior.</td><td>Performance baseline and test results.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Compensating controls</td><td>Plan for non-upgradeable assets.</td><td>Use segmentation, strict remote access, jump hosts, monitoring, controlled conduits, lifecycle replacement, and time-bound risk acceptance.</td><td>Compensating control plan.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Operations</td><td>Update monitoring and incident response.</td><td>Ensure changed certificates/protocols are visible in OT monitoring and runbooks; conduct tabletop exercises.</td><td>Runbooks; alert rules; tabletop results.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr>
+<tr><td>Lifecycle</td><td>Link PQC readiness to capital planning.</td><td>Replace non-agile devices and unsupported appliances during scheduled lifecycle refresh.</td><td>Lifecycle roadmap and capital plan.</td><td>☐ Not started ☐ In progress ☐ Complete</td></tr></tbody>
+</table>
+</section>
+<section>
+<h2>Required safety gates before production change</h2>
+<ol>
+<li>Process owner, asset owner, and safety owner approve the scope.</li>
+<li>Vendor confirms supportability and known constraints.</li>
+<li>Representative lab or non-production validation is complete.</li>
+<li>Backup, rollback, and manual operations procedures are documented.</li>
+<li>Maintenance window and operational communications are approved.</li>
+<li>Monitoring and incident response runbooks are updated before deployment.</li>
+</ol>
+</section>
+<section>
+<h2>Common OT cryptographic dependencies to check</h2>
+<ul>
+<li>Remote access VPN, bastions, privileged access gateways, and vendor support channels.</li>
+<li>OPC UA certificates, industrial gateway TLS, historian web interfaces, and HMI web management.</li>
+<li>Engineering workstation software update/signing paths.</li>
+<li>PLC/RTU firmware signing, secure boot, device certificates, and vendor update packages.</li>
+<li>Wireless, cellular, satellite, or radio links that use certificates or public-key handshakes.</li>
+<li>Cloud connectors, telemetry gateways, edge devices, and data diode management interfaces.</li>
+</ul>
+</section>
+<section>
+<h2>Compensating controls for non-agile or non-upgradeable assets</h2>
+<table>
+<thead><tr><th>Constraint</th><th>Possible compensating controls</th></tr></thead>
+<tbody>
+<tr><td>Fixed cryptographic algorithms</td><td>Segmentation, controlled conduits, jump hosts, restricted trust relationships, monitoring, and replacement roadmap.</td></tr>
+<tr><td>Unsupported certificates or large key/signature sizes</td><td>Gateway mediation, vendor-approved upgrade path, certificate profile constraints, and compatibility testing.</td></tr>
+<tr><td>Vendor support gap</td><td>Contractual roadmap request, accepted-risk expiration, isolation, enhanced monitoring, and lifecycle refresh.</td></tr>
+<tr><td>Operational downtime constraint</td><td>Longer pilot period, maintenance-window sequencing, rollback rehearsal, and staged cutover.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="references">
+<h2>Reference sources</h2>
+<table>
+<thead><tr><th>Source</th><th>Public URL</th></tr></thead>
+<tbody>
+<tr><td>NIST FIPS 203 — Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM)</td><td><a href="https://csrc.nist.gov/pubs/fips/203/final">https://csrc.nist.gov/pubs/fips/203/final</a></td></tr>
+<tr><td>NIST FIPS 204 — Module-Lattice-Based Digital Signature Standard (ML-DSA)</td><td><a href="https://csrc.nist.gov/pubs/fips/204/final">https://csrc.nist.gov/pubs/fips/204/final</a></td></tr>
+<tr><td>NIST FIPS 205 — Stateless Hash-Based Digital Signature Standard (SLH-DSA)</td><td><a href="https://csrc.nist.gov/pubs/fips/205/final">https://csrc.nist.gov/pubs/fips/205/final</a></td></tr>
+<tr><td>NIST PQC Standardization Project</td><td><a href="https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization">https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization</a></td></tr>
+<tr><td>NIST NCCoE Migration to Post-Quantum Cryptography</td><td><a href="https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc">https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc</a></td></tr>
+<tr><td>NIST CSWP 39 — Considerations for Achieving Crypto Agility</td><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.39.pdf">https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.39.pdf</a></td></tr>
+<tr><td>NIST Cybersecurity Framework 2.0 announcement and resources</td><td><a href="https://www.nist.gov/news-events/news/2024/02/nist-releases-version-20-landmark-cybersecurity-framework">https://www.nist.gov/news-events/news/2024/02/nist-releases-version-20-landmark-cybersecurity-framework</a></td></tr>
+<tr><td>NIST SP 800-53 Rev. 5 — Security and Privacy Controls</td><td><a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final">https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final</a></td></tr>
+<tr><td>NIST SP 800-82 Rev. 3 — Guide to Operational Technology Security</td><td><a href="https://csrc.nist.gov/pubs/sp/800/82/r3/final">https://csrc.nist.gov/pubs/sp/800/82/r3/final</a></td></tr>
+<tr><td>NIST SP 800-161 Rev. 1 Update 1 — Cybersecurity Supply Chain Risk Management</td><td><a href="https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final">https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final</a></td></tr>
+<tr><td>CISA — Quantum-Readiness: Migration to Post-Quantum Cryptography</td><td><a href="https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography">https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography</a></td></tr>
+<tr><td>CISA — Post-Quantum Considerations for Operational Technology</td><td><a href="https://www.cisa.gov/resources-tools/resources/post-quantum-considerations-operational-technology">https://www.cisa.gov/resources-tools/resources/post-quantum-considerations-operational-technology</a></td></tr>
+<tr><td>CISA — Product Categories for Technologies that Use PQC Standards</td><td><a href="https://www.cisa.gov/resources-tools/resources/product-categories-technologies-use-post-quantum-cryptography-standards">https://www.cisa.gov/resources-tools/resources/product-categories-technologies-use-post-quantum-cryptography-standards</a></td></tr>
+</tbody>
+</table>
+<p class="small">This resource hub is an independent, vendor-neutral planning aid. It is not a NIST, CISA, or government publication and does not imply endorsement by any public agency.</p>
+</section>
+</main>
+<footer>
+  SecureAzCloud PQC Migration Resource Hub v1.0. Use as a planning and communication resource; adapt controls and sequencing to organizational risk, architecture, and operational constraints.
+</footer>
+</body>
+</html>
