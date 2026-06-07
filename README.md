@@ -1,5 +1,25 @@
 # SecureAzCloud Post-Quantum Migration Hub
 
+##  Live Resource Hub
+
+**Visit the public resource hub:**
+
+https://cyberautomationx.github.io/Post-Quantum-Migration-Hub/
+
+---
+
+Vendor-neutral guidance, templates, checklists, and migration playbooks for organizations preparing for the transition to Post-Quantum Cryptography.
+
+### Available Resources
+
+- Cryptographic Inventory Template
+- PQC Readiness Checklist
+- Cloud & IAM Migration Playbook
+- SCADA / ICS Readiness Checklist
+- Reference Map
+
+---
+
 ## Overview
 
 The SecureAzCloud Post-Quantum Migration Hub is a public resource center dedicated to helping organizations prepare for the transition from quantum-vulnerable cryptography to NIST-standardized Post-Quantum Cryptography (PQC).
@@ -7,14 +27,6 @@ The SecureAzCloud Post-Quantum Migration Hub is a public resource center dedicat
 This repository provides practical implementation guidance, assessment tools, migration planning resources, and operational checklists designed for enterprise, cloud, identity, and critical infrastructure environments.
 
 The content is vendor-neutral and aligned with publicly available standards and guidance from NIST, CISA, and related cybersecurity frameworks.
-
----
-
-## Resource Hub
-
-Visit the public resource hub:
-
-https://cyberautomationx.github.io/Post-Quantum-Migration-Hub/
 
 ---
 
