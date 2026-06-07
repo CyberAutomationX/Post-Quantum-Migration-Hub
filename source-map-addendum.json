@@ -1,0 +1,90 @@
+{
+  "package": "SecureAzCloud PQC Add-on Implementation Artifacts",
+  "version": "1.1.0",
+  "updated": "2026-06-07",
+  "existing_live_hub": "https://cyberautomationx.github.io/Post-Quantum-Migration-Hub/",
+  "new_artifacts": [
+    {
+      "title": "Crypto-Agility Assessment Template",
+      "html": "resources/crypto-agility-assessment-template.html",
+      "xlsx": "downloads/secureazcloud-crypto-agility-assessment-template-v1.0.xlsx",
+      "pdf": "downloads/secureazcloud-crypto-agility-assessment-template-v1.0.pdf",
+      "csv": "downloads/secureazcloud-crypto-agility-assessment-template-v1.0.csv",
+      "purpose": "PDF/XLSX template with crypto asset inventory fields, long-lived data flag, risk scoring, and migration priority."
+    },
+    {
+      "title": "PQC Cloud & Workload Identity Migration Checklist",
+      "html": "resources/pqc-cloud-workload-identity-migration-checklist.html",
+      "xlsx": "downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.xlsx",
+      "pdf": "downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.pdf",
+      "csv": "downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.csv",
+      "purpose": "Checklist covering certificates, workload identities, PKI, TLS/mTLS, token signing, key lifecycle, SaaS dependencies, and CISA 2026 category alignment."
+    },
+    {
+      "title": "SCADA/ICS PQC Migration Continuity Checklist",
+      "html": "resources/scada-ics-pqc-migration-continuity-checklist.html",
+      "xlsx": "downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.xlsx",
+      "pdf": "downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.pdf",
+      "csv": "downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.csv",
+      "purpose": "Safety-first OT/ICS/SCADA checklist covering latency, legacy gateways, maintenance windows, vendor dependencies, hybrid mode, rollback, and safety continuity."
+    }
+  ],
+  "sources": [
+    {
+      "name": "NIST FIPS 203 - Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM)",
+      "alignment": "PQC key establishment/key encapsulation planning for TLS, VPN, API, and machine-to-machine trust dependencies.",
+      "url": "https://csrc.nist.gov/pubs/fips/203/final"
+    },
+    {
+      "name": "NIST FIPS 204 - Module-Lattice-Based Digital Signature Standard (ML-DSA)",
+      "alignment": "Digital signature migration planning for certificates, code signing, artifact signing, identity token signing, and PKI roadmaps.",
+      "url": "https://csrc.nist.gov/pubs/fips/204/final"
+    },
+    {
+      "name": "NIST FIPS 205 - Stateless Hash-Based Digital Signature Standard (SLH-DSA)",
+      "alignment": "Hash-based signature planning for conservative signature-use cases where size/performance tradeoffs are acceptable.",
+      "url": "https://csrc.nist.gov/pubs/fips/205/final"
+    },
+    {
+      "name": "NIST NCCoE Migration to Post-Quantum Cryptography",
+      "alignment": "Cryptographic discovery, inventory, risk-prioritization, and interoperability-testing workflow.",
+      "url": "https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc"
+    },
+    {
+      "name": "NIST CSWP 39 - Considerations for Achieving Crypto Agility",
+      "alignment": "Crypto-agility strategy, governance, algorithm/configuration abstraction, operational continuity, and lifecycle planning.",
+      "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.39.pdf"
+    },
+    {
+      "name": "CISA - Product Categories for Technologies That Use Post-Quantum Cryptography Standards",
+      "alignment": "2026 product-category reference for PQC adoption, including cloud services, web software, and endpoint security categories.",
+      "url": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/405c246"
+    },
+    {
+      "name": "CISA/NSA/NIST - Quantum-Readiness: Migration to Post-Quantum Cryptography",
+      "alignment": "Quantum-readiness roadmap, cryptographic inventory, vendor engagement, and supply-chain dependency assessment.",
+      "url": "https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography"
+    },
+    {
+      "name": "CISA - Post-Quantum Considerations for Operational Technology",
+      "alignment": "OT/ICS/SCADA migration considerations for safety, performance, vendor dependency, and operational continuity.",
+      "url": "https://www.cisa.gov/resources-tools/resources/post-quantum-considerations-operational-technology"
+    },
+    {
+      "name": "NIST SP 800-82 Rev. 3 - Guide to Operational Technology Security",
+      "alignment": "OT security planning that accounts for performance, reliability, safety, and physical process constraints.",
+      "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final"
+    },
+    {
+      "name": "NIST SP 800-161 Rev. 1 Update 1 - Cybersecurity Supply Chain Risk Management Practices",
+      "alignment": "Supplier roadmap, procurement, support-window tracking, and supply-chain risk-management evidence.",
+      "url": "https://csrc.nist.gov/publications/search?keywords-lg=800-161"
+    },
+    {
+      "name": "NIST Cybersecurity Framework 2.0",
+      "alignment": "Govern, Identify, Protect, Detect, Respond, and Recover framing for migration governance and risk communication.",
+      "url": "https://www.nist.gov/cyberframework"
+    }
+  ],
+  "disclaimer": "Independent vendor-neutral planning aid; not a NIST, CISA, or government publication or endorsement."
+}

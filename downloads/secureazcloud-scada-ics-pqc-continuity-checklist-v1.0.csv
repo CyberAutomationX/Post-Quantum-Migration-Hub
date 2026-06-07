@@ -1,0 +1,4 @@
+Domain,Continuity Control / Task,Safety or Operational Rationale,Status,Priority,Owner,Maintenance Window,Evidence Link,Notes
+Latency,"Capture baseline latency, jitter, timeout, CPU, memory, and bandwidth for critical flows.",Performance thresholds must be engineering-approved before PQC/hybrid testing.,Not Started,P1,,,,
+Legacy Gateway,"Identify protocol converters, VPN concentrators, firewall appliances, terminal servers, and embedded crypto.",Legacy devices may not support algorithm changes without firmware or replacement.,Not Started,P1,,,,
+Rollback,"Create and rehearse rollback for certificates, firmware, gateway config, trust stores, and monitoring baselines.",Rollback must restore safe and stable operation.,Not Started,P1,,,,

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SCADA/ICS PQC Migration Continuity Checklist</title>
+<style>
+:root{--brand:#12355b;--accent:#0f766e;--bg:#f8fafc;--card:#ffffff;--line:#cbd5e1;--text:#0f172a;--muted:#475569;}
+*{box-sizing:border-box} body{font-family:Arial,Helvetica,sans-serif;line-height:1.55;margin:0;background:var(--bg);color:var(--text);}
+header{background:linear-gradient(135deg,var(--brand),#1e6091);color:#fff;padding:36px 24px;}
+main{max-width:1120px;margin:0 auto;padding:28px 24px 56px;}
+a{color:#0b5cad} .eyebrow{text-transform:uppercase;letter-spacing:.08em;font-weight:700;font-size:12px;opacity:.9}
+h1{font-size:34px;line-height:1.1;margin:10px 0 12px} h2{margin-top:30px;color:var(--brand)} h3{margin-bottom:8px;color:#12355b}
+.subtitle{font-size:17px;max-width:900px}.meta{font-size:13px;opacity:.95}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 1px 4px rgba(15,23,42,.07)}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;border-radius:8px;padding:9px 12px;font-weight:700;font-size:14px}
+.btn.secondary{background:#334155}
+table{border-collapse:collapse;width:100%;background:#fff;margin:14px 0} th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top;font-size:14px} th{background:#e2e8f0}
+.callout{background:#fff7ed;border-left:5px solid #f97316;padding:14px 16px;margin:18px 0;border-radius:8px}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:18px 24px;max-width:1120px;margin:0 auto}
+.badge{display:inline-block;background:#e0f2fe;color:#075985;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:700;margin-right:6px}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">SecureAzCloud Public PQC Artifact</div>
+  <h1>SCADA/ICS PQC Migration Continuity Checklist</h1>
+  <p class="subtitle">Safety-first checklist for OT/ICS/SCADA cryptographic migration continuity covering latency, legacy gateways, maintenance windows, vendor dependencies, hybrid mode, rollback, and safety continuity.</p>
+  <p class="meta">Version v1.0 | Updated 2026-06-07 | Vendor-neutral | NIST-aligned | Public/redacted planning aid</p>
+</header>
+<main>
+  <p><a href="../index.html">&larr; Back to SecureAzCloud PQC Migration Resource Hub</a></p>
+  <div class="callout">
+    This public version is intentionally redacted and uses examples/placeholders only. It does not include secrets, hostnames, IP addresses, customer data, internal diagrams, proprietary product configurations, or key material.
+  </div>
+
+  <h2>Downloads</h2>
+  <div class="card-grid">
+    
+        <div class="card">
+          <h3>XLSX Checklist</h3>
+          <p>Workbook with continuity checklist, OT crypto inventory, latency test cases, vendor roadmap tracker, and sources.</p>
+          <div class="btn-row"><a class="btn" href="../downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.xlsx">Download</a></div>
+        </div>
+        <div class="card">
+          <h3>PDF Companion</h3>
+          <p>Printable companion covering safety-first migration principles, continuity coverage, and representative test cases.</p>
+          <div class="btn-row"><a class="btn" href="../downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.pdf">Download</a></div>
+        </div>
+        <div class="card">
+          <h3>CSV Checklist</h3>
+          <p>Lightweight CSV checklist for importing into OT change-control or GRC workflows.</p>
+          <div class="btn-row"><a class="btn" href="../downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.csv">Download</a></div>
+        </div>
+  </div>
+
+  <h2>What this artifact covers</h2>
+  <table>
+    <thead><tr><th>Area</th><th>Coverage</th><th>Expected Evidence</th></tr></thead>
+    <tbody><tr><td>OT discovery</td><td>Remote access, engineering workstations, HMIs, historians, gateways, PLC/RTU management, update mechanisms, vendor tunnels.</td><td>OT inventory, protocol map, architecture evidence.</td></tr>
+<tr><td>Latency and performance</td><td>Baseline latency, jitter, packet loss, timeout, CPU, memory, bandwidth, and engineering-approved thresholds.</td><td>Baseline report, lab test result, acceptance criteria.</td></tr>
+<tr><td>Legacy gateway and vendor dependency</td><td>Protocol converters, serial-to-IP, VPN concentrators, firewalls, embedded crypto, firmware support windows.</td><td>Vendor roadmap, support lifecycle, firmware evidence.</td></tr>
+<tr><td>Rollback and continuity</td><td>Certificate rollback, trust-store rollback, firmware/config restore, monitoring restore, maintenance-window plan.</td><td>Rollback drill record, change ticket, safety signoff.</td></tr></tbody>
+  </table>
+
+  <h2>Recommended use</h2>
+  <ol>
+    <li>Start with OT_Crypto_Inventory, using redacted site/zone names where output may be shared publicly.</li>
+<li>Capture latency and performance baselines before any PQC or hybrid test.</li>
+<li>Use Latency_Test_Cases in a representative lab before production scheduling.</li>
+<li>Request vendor roadmaps and rollback guidance for gateways, firmware, remote access, and update mechanisms.</li>
+<li>Treat unsupported systems as managed exceptions with compensating controls and lifecycle plans.</li>
+  </ol>
+
+  <h2>Standards and source alignment</h2>
+  <p>Aligned to NIST SP 800-82 Rev. 3&#x27;s OT safety/performance/reliability emphasis, CISA OT PQC considerations, and NIST supply-chain risk-management guidance.</p>
+  <p>Core references include NIST FIPS 203, NIST FIPS 204, NIST FIPS 205, NIST NCCoE Migration to PQC, NIST CSWP 39 crypto-agility guidance, CISA quantum-readiness resources, and CISA's 2026 product-category announcement for PQC adoption.</p>
+
+  <h2>Disclaimer</h2>
+  <p>This artifact is an independent planning aid. It is not a government publication and does not imply endorsement by NIST, CISA, or any public agency. Organizations should adapt it to their own architecture, operating constraints, regulatory obligations, and vendor support status.</p>
+</main>
+<footer>
+  SecureAzCloud PQC Migration Resource Hub | 2026-06-07
+</footer>
+</body>
+</html>

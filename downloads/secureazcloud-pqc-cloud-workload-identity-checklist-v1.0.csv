@@ -1,0 +1,4 @@
+Domain,Control / Task,CISA 2026 Product-Category Alignment,Status,Priority,Owner,Due Date,Evidence Link,Notes
+Certificates,"Inventory managed certificates, CAs, TLS/mTLS endpoints, certificate automation, and termination layers.",Web software; cloud services,Not Started,P1,,,,
+Workload Identity,"Inventory service principals, IAM roles, Kubernetes service accounts, SPIFFE/SPIRE IDs, service mesh identities, and CI/CD identities.",Cloud services; SaaS; identity services,Not Started,P1,,,,
+IAM,Map OIDC/OAuth/SAML/JWT token signing and relying-party verifier libraries.,SaaS; web software; identity services,Not Started,P1,,,,

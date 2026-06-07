@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PQC Cloud &amp; Workload Identity Migration Checklist</title>
+<style>
+:root{--brand:#12355b;--accent:#0f766e;--bg:#f8fafc;--card:#ffffff;--line:#cbd5e1;--text:#0f172a;--muted:#475569;}
+*{box-sizing:border-box} body{font-family:Arial,Helvetica,sans-serif;line-height:1.55;margin:0;background:var(--bg);color:var(--text);}
+header{background:linear-gradient(135deg,var(--brand),#1e6091);color:#fff;padding:36px 24px;}
+main{max-width:1120px;margin:0 auto;padding:28px 24px 56px;}
+a{color:#0b5cad} .eyebrow{text-transform:uppercase;letter-spacing:.08em;font-weight:700;font-size:12px;opacity:.9}
+h1{font-size:34px;line-height:1.1;margin:10px 0 12px} h2{margin-top:30px;color:var(--brand)} h3{margin-bottom:8px;color:#12355b}
+.subtitle{font-size:17px;max-width:900px}.meta{font-size:13px;opacity:.95}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 1px 4px rgba(15,23,42,.07)}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;border-radius:8px;padding:9px 12px;font-weight:700;font-size:14px}
+.btn.secondary{background:#334155}
+table{border-collapse:collapse;width:100%;background:#fff;margin:14px 0} th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top;font-size:14px} th{background:#e2e8f0}
+.callout{background:#fff7ed;border-left:5px solid #f97316;padding:14px 16px;margin:18px 0;border-radius:8px}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:18px 24px;max-width:1120px;margin:0 auto}
+.badge{display:inline-block;background:#e0f2fe;color:#075985;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:700;margin-right:6px}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">SecureAzCloud Public PQC Artifact</div>
+  <h1>PQC Cloud &amp; Workload Identity Migration Checklist</h1>
+  <p class="subtitle">Checklist covering certificates, workload identities, PKI, TLS/mTLS, signing, key lifecycle, SaaS dependencies, and cloud/IAM migration controls.</p>
+  <p class="meta">Version v1.0 | Updated 2026-06-07 | Vendor-neutral | NIST-aligned | Public/redacted planning aid</p>
+</header>
+<main>
+  <p><a href="../index.html">&larr; Back to SecureAzCloud PQC Migration Resource Hub</a></p>
+  <div class="callout">
+    This public version is intentionally redacted and uses examples/placeholders only. It does not include secrets, hostnames, IP addresses, customer data, internal diagrams, proprietary product configurations, or key material.
+  </div>
+
+  <h2>Downloads</h2>
+  <div class="card-grid">
+    
+        <div class="card">
+          <h3>XLSX Checklist</h3>
+          <p>Workbook with cloud/IAM checklist, workload identity inventory, certificate/key map, CISA category mapping, pilot test plan, and sources.</p>
+          <div class="btn-row"><a class="btn" href="../downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.xlsx">Download</a></div>
+        </div>
+        <div class="card">
+          <h3>PDF Companion</h3>
+          <p>Printable checklist companion with CISA 2026 product-category alignment and pilot acceptance criteria.</p>
+          <div class="btn-row"><a class="btn" href="../downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.pdf">Download</a></div>
+        </div>
+        <div class="card">
+          <h3>CSV Checklist</h3>
+          <p>Lightweight CSV checklist for importing into ticketing, GRC, or project management tools.</p>
+          <div class="btn-row"><a class="btn" href="../downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.csv">Download</a></div>
+        </div>
+  </div>
+
+  <h2>What this artifact covers</h2>
+  <table>
+    <thead><tr><th>Area</th><th>Coverage</th><th>Expected Evidence</th></tr></thead>
+    <tbody><tr><td>Certificates and TLS</td><td>Managed certs, public/private CAs, mTLS, API gateways, service mesh, chain-size and relying-party constraints.</td><td>Certificate scan, CA export, TLS test result, gateway/service-mesh config.</td></tr>
+<tr><td>Workload identities</td><td>Service principals, IAM roles, managed identities, Kubernetes service accounts, SPIFFE/SPIRE IDs, CI/CD identities.</td><td>IAM export, trust bundle map, workload identity inventory.</td></tr>
+<tr><td>Identity signing</td><td>OIDC, OAuth, SAML, JWT, federation metadata, verifier libraries, and SaaS relying parties.</td><td>IdP signing-key inventory, relying-party test results.</td></tr>
+<tr><td>SaaS/vendor readiness</td><td>Supplier roadmap, cryptographic disclosure, support windows, procurement language.</td><td>Vendor response, contract clause, support commitment.</td></tr></tbody>
+  </table>
+
+  <h2>Recommended use</h2>
+  <ol>
+    <li>Use the Checklist sheet to assign owners, priorities, due dates, and evidence links.</li>
+<li>Populate the Workload_Identity_Inventory for P1 applications and shared platforms.</li>
+<li>Populate the Certificate_and_Key_Map for TLS, mTLS, token signing, KMS/HSM, and CA dependencies.</li>
+<li>Use the CISA_Category_Map to support vendor/procurement questions.</li>
+<li>Run Pilot_Test_Plan in non-production before production change approval.</li>
+  </ol>
+
+  <h2>Standards and source alignment</h2>
+  <p>Aligned to CISA&#x27;s 2026 PQC product-category release for cloud services, web software, and endpoint security, and to NIST PQC migration guidance.</p>
+  <p>Core references include NIST FIPS 203, NIST FIPS 204, NIST FIPS 205, NIST NCCoE Migration to PQC, NIST CSWP 39 crypto-agility guidance, CISA quantum-readiness resources, and CISA's 2026 product-category announcement for PQC adoption.</p>
+
+  <h2>Disclaimer</h2>
+  <p>This artifact is an independent planning aid. It is not a government publication and does not imply endorsement by NIST, CISA, or any public agency. Organizations should adapt it to their own architecture, operating constraints, regulatory obligations, and vendor support status.</p>
+</main>
+<footer>
+  SecureAzCloud PQC Migration Resource Hub | 2026-06-07
+</footer>
+</body>
+</html>
