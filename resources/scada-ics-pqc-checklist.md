@@ -1,7 +1,9 @@
 # SecureAzCloud SCADA/ICS PQC Readiness Checklist
 
-Version: 1.0  
-Release date: 2026-06-07
+Author and maintainer: Ankit Gupta
+
+Version: 2.0  
+Release date: 2026-09-29
 
 This checklist supports safety-first planning for PQC readiness in SCADA, ICS, and broader operational technology environments.
 
@@ -33,18 +35,34 @@ This checklist supports safety-first planning for PQC readiness in SCADA, ICS, a
 5. Maintenance window and operational communications are approved.
 6. Monitoring and incident response runbooks are updated before deployment.
 
+## OT continuity controls for 2026 and later
+
+| Focus | Planning control | Evidence |
+|---|---|---|
+| Publication status | Use SP 800-82 Rev. 3 as the final baseline; track Rev. 4 as an initial public draft as of this review. Do not treat the draft as a mandatory replacement. | Standards watch item, gap assessment, review owner. |
+| Long device and signature lifetimes | Inventory secure boot, firmware verification, trust-anchor updateability, recovery images, engineering tools, offline devices, and hardware lifecycles. | Vendor-confirmed key/signature-size limits and supported update path. |
+| Passive evidence first | Record discovery method and confidence. Avoid active probing that may disrupt deterministic control or safety systems. | Passive discovery/configuration review and engineering-approved test method. |
+| Real-time validation | Test worst-case latency, jitter, packet loss, fragmentation, retransmission, reconnect storms, CPU/memory, failover, and watchdog/safety behavior. | Engineering-approved limits and representative lab results. |
+| Gateway boundaries | Record which link a PQC-capable gateway protects and where plaintext or classical cryptography remains. Segmentation and gateways do not provide end-to-end PQC automatically. | Conduit diagram and documented residual risk. |
+| Change and recovery | Require safety/operations approval, vendor support, maintenance window, backup restoration, rollback, monitoring, and time-limited legacy exception. | MOC record, rollback drill, outage/fail-safe criteria, funded replacement plan. |
+
+**Source review:** 2026-09-29. Final sources, drafts, and hub-defined targets have different authority. See the [2026 and beyond guide](nist-2026-and-beyond.md) and [source status register](reference-map.html). Future recommendations cannot be known in advance. Review quarterly and on standards, protocol, errata, supplier, or threat changes; next planned review: 2026-12-29.
+
 ## Sources
 
-- NIST FIPS 203 — Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM): https://csrc.nist.gov/pubs/fips/203/final
-- NIST FIPS 204 — Module-Lattice-Based Digital Signature Standard (ML-DSA): https://csrc.nist.gov/pubs/fips/204/final
-- NIST FIPS 205 — Stateless Hash-Based Digital Signature Standard (SLH-DSA): https://csrc.nist.gov/pubs/fips/205/final
-- NIST PQC Standardization Project: https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization
-- NIST NCCoE Migration to Post-Quantum Cryptography: https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc
-- NIST CSWP 39 — Considerations for Achieving Crypto Agility: https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.39.pdf
-- NIST Cybersecurity Framework 2.0 announcement and resources: https://www.nist.gov/news-events/news/2024/02/nist-releases-version-20-landmark-cybersecurity-framework
-- NIST SP 800-53 Rev. 5 — Security and Privacy Controls: https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final
-- NIST SP 800-82 Rev. 3 — Guide to Operational Technology Security: https://csrc.nist.gov/pubs/sp/800/82/r3/final
-- NIST SP 800-161 Rev. 1 Update 1 — Cybersecurity Supply Chain Risk Management: https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final
-- CISA — Quantum-Readiness: Migration to Post-Quantum Cryptography: https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography
-- CISA — Post-Quantum Considerations for Operational Technology: https://www.cisa.gov/resources-tools/resources/post-quantum-considerations-operational-technology
-- CISA — Product Categories for Technologies that Use PQC Standards: https://www.cisa.gov/resources-tools/resources/product-categories-technologies-use-post-quantum-cryptography-standards
+Sources reviewed 2026-09-29. See the [full register](reference-map.html) for status and scope.
+
+| ID | Source | Status |
+|---|---|---|
+| N01 | [FIPS 203 ML-KEM; key establishment, parameter sets 512/768/1024; monitor potential errata](https://csrc.nist.gov/pubs/fips/203/final) | Final 2024-08-13; notice 2025-11-17 |
+| N02 | [FIPS 204 ML-DSA; signature generation and verification; monitor potential errata](https://csrc.nist.gov/pubs/fips/204/final) | Final 2024-08-13; notice 2026-07-31 |
+| N03 | [FIPS 205 SLH-DSA; stateless hash-based signatures](https://csrc.nist.gov/pubs/fips/205/final) | Final 2024-08-13 |
+| N05 | [CSWP 39-upd1; governance, inventory, risk-prioritized agility, negotiation, supply chains, APIs, continuous improvement](https://csrc.nist.gov/pubs/cswp/39/upd1/considerations-for-achieving-crypto-agility/final) | Final 2025-12-19; updated 2026-06-29 |
+| N06 | [IR 8547; HNDL, signature and code-verification distinctions, draft transition tables](https://csrc.nist.gov/pubs/ir/8547/ipd) | Initial public draft 2024-11-12 |
+| N13 | [SP 800-82 Rev. 3; OT performance, reliability, safety and controls](https://csrc.nist.gov/pubs/sp/800/82/r3/final) | Final 2023-09-28 |
+| N14 | [SP 800-82 Rev. 4; CSF2 alignment, asset management, monitoring, OT/IIoT/cloud, system-management security](https://csrc.nist.gov/pubs/sp/800/82/r4/ipd) | Initial public draft 2026-09-21 |
+| N15 | [SP 1339; backups in OT change and recovery practice](https://csrc.nist.gov/pubs/sp/1339/final) | Final 2026-06-17 |
+| N29 | [SP 800-161 Rev. 1-upd1; supplier risk and dependency governance](https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final) | Final; original 2022-05, update 2024-11-01 |
+| N30 | [SP 800-230; additional limited-signature SLH-DSA parameter sets, software/firmware/certificate watch item](https://csrc.nist.gov/pubs/sp/800/230/ipd) | Initial public draft 2026-04-13 |
+
+Independent planning aid; not a NIST publication or endorsement.

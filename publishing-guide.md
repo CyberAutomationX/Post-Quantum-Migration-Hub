@@ -1,31 +1,46 @@
 # Publishing Guide — SecureAzCloud PQC Migration Resource Hub
 
-Version: 1.0  
-Release date: 2026-06-07
+Author and maintainer: Ankit Gupta
 
-## Static publication steps
+Repository version: 2.0.0  
+Workbook version: 2.0  
+Source review and release date: 2026-09-29
 
-1. Unzip the package.
-2. Upload the entire `SecureAzCloud_PQC_Hub` folder to a static website, public knowledge base, or internal portal.
-3. Set `index.html` as the landing page.
-4. Confirm that these links open correctly:
-   - `downloads/secureazcloud-pqc-crypto-inventory-template.xlsx`
-   - `downloads/secureazcloud-pqc-crypto-inventory-template.csv`
-   - `resources/pqc-readiness-checklist.html`
-   - `resources/cloud-iam-migration-playbook.html`
-   - `resources/scada-ics-pqc-checklist.html`
-   - `resources/reference-map.html`
-5. Record the publication URL, publication date, version, and a screenshot of the landing page for release documentation.
-6. Create a recurring review cycle. Suggested cadence: quarterly or when NIST/CISA guidance, standards, protocols, or major vendor roadmaps materially change.
+## Static Publication
 
-## Suggested internal announcement
+1. Publish the repository's static content, keeping `index.html`, `assets/`, `resources/`, and `downloads/` in their relative locations.
+2. Preserve historical workbook content and existing links; attribution metadata is standardized to Ankit Gupta. Current landing pages and source-map JSON must point to the `-v2.0` filenames.
+3. Confirm all four current XLSX files, their CSV/PDF companions, the guide pages, source maps, reports, license, and release notes resolve.
+4. Check the root landing page and resource pages at desktop and mobile widths. Confirm navigation, downloads, source links, source status, and version/date labels.
+5. Open the workbooks in a compatible spreadsheet application; check dropdowns, formulas, examples, blank rows, instructions, and export consistency. Record what was actually tested in `VALIDATION-REPORT.md`.
+6. Record repository commit, publication URL, version, and date in the final release report. Do not claim the site is deployed or a GitHub Release exists until verified.
 
-SecureAzCloud has published a vendor-neutral PQC Migration Resource Hub with a crypto inventory template, PQC readiness checklist, cloud/IAM migration playbook, and SCADA/ICS readiness checklist. The hub is designed to help teams identify quantum-vulnerable cryptography, prioritize risk, coordinate suppliers, and plan migration activities using NIST-aligned practices.
+## Current File Set
 
-## Maintenance checklist
+All current XLSX, CSV, and PDF companions use these bases with the relevant extension:
 
-- Keep the source links current.
-- Review the inventory fields after major architecture, IAM, PKI, or OT/ICS changes.
-- Track supplier roadmap updates.
-- Refresh risk scoring and priority levels at least quarterly.
-- Maintain release notes for each hub version.
+- `downloads/secureazcloud-pqc-crypto-inventory-template-v2.0`
+- `downloads/secureazcloud-crypto-agility-assessment-template-v2.0`
+- `downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v2.0`
+- `downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v2.0`
+
+The [README](README.md) is the complete current/historical download catalog. The [source map](source-map.json) and [crosswalk](source-map-addendum.json) record reviewed NIST source IDs and statuses. Do not infer approval from inclusion in the register.
+
+## Maintaining Completed Assessments
+
+Preserve the original assessment and its version. Map old fields into the version 2.0 schema by header/meaning, retain evidence provenance, and review new fields. Do not paste by column position or overwrite formula cells. Unknowns remain unassessed until evidence supports a decision.
+
+## Standards and Threat Review
+
+Assign an owner. Review quarterly, with the next planned review on **2026-12-29**, and sooner when a material event occurs. This is a documented maintenance process, not an automated monitoring service or a NIST-mandated interval.
+
+- Check official NIST publication pages for final/draft status, errata, new versions, candidate status, and supersession.
+- Verify module certificate/status, exact implementation, protocol profile, and supplier-supported configuration.
+- Monitor credible cryptanalytic results, implementation issues, supplier releases, incidents, and architecture changes.
+- Record source changes, affected artifacts/assets, applicability, decisions, owners, due dates, evidence, and tests.
+- Revisit 2026/2027/later plans against current requirements. Do not turn draft dates or expected publication dates into mandates.
+- Update the source register, affected files, versions, release notes, links, and validation report together.
+
+## Publication Limits
+
+Publish synthetic/redacted examples only. Do not include operational inventories, credentials, private keys, hostnames, internal architecture, customer data, or sensitive evidence. Describe source alignment precisely; do not claim NIST endorsement, certification, universal compliance, future guidance coverage, or unperformed testing.

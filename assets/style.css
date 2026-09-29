@@ -144,3 +144,8 @@ footer {
   header { padding: 24px; }
   table { page-break-inside: auto; }
 }
+/* v2.0 source-register readability */
+.table-scroll { overflow-x: auto; }
+td { overflow-wrap: anywhere; }
+.currency-note { border-left: 5px solid var(--accent); padding-left: 18px; }
+@media (max-width: 720px) { .table-scroll table { min-width: 660px; } }

@@ -1,92 +1,45 @@
-# Validation Report - SecureAzCloud PQC Add-on Implementation Artifacts v1.1.0
+# Validation report - PQC Hub v2.0.0
 
-Generated: 2026-06-07
+Author: Ankit Gupta | Reviewed: 2026-09-29
 
-## Local validation completed
+This report records artifact checks. It does not certify native Excel behavior or production cryptographic deployments.
 
-- XLSX files were created using spreadsheet APIs and re-imported successfully.
-- Crypto-Agility workbook formula cells were inspected for the scoring model.
-- PDFs were rendered to PNG pages with the PDF rendering workflow.
-- HTML resource pages use relative links to files included in this upload bundle.
-- The `../index.html` links in resource pages are expected to resolve after upload because your repository already has `index.html` at the root.
-- The index snippet uses relative links from repository root to files included in this upload bundle.
-- Filenames are lowercase, hyphenated, and case-matched to GitHub Pages paths.
+## Workbook package checks
 
-## PDF render validation
+| File | Sheets | Formulas | Validation rules | Excel tables | Result |
+|---|---:|---:|---:|---:|---|
+| [secureazcloud-crypto-agility-assessment-template-v2.0.xlsx](downloads/secureazcloud-crypto-agility-assessment-template-v2.0.xlsx) | 8 | 607 | 25 | 1 | No archive/XML, cached error or broken reference findings |
+| [secureazcloud-pqc-cloud-workload-identity-checklist-v2.0.xlsx](downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v2.0.xlsx) | 7 | 42 | 9 | 6 | No archive/XML, cached error or broken reference findings |
+| [secureazcloud-pqc-crypto-inventory-template-v2.0.xlsx](downloads/secureazcloud-pqc-crypto-inventory-template-v2.0.xlsx) | 9 | 3007 | 27 | 7 | No archive/XML, cached error or broken reference findings |
+| [secureazcloud-scada-ics-pqc-continuity-checklist-v2.0.xlsx](downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v2.0.xlsx) | 6 | 41 | 10 | 5 | No archive/XML, cached error or broken reference findings |
 
-- secureazcloud-crypto-agility-assessment-template-v1.0.pdf: rendered successfully, 3 pages.
-- secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.pdf: rendered successfully, 3 pages.
-- secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.pdf: rendered successfully, 3 pages.
+Formula builders tested representative live input changes, restoration to the delivered state, blank-versus-zero handling and missing-evidence conditions. Worksheet ranges were rendered and visually reviewed. Native Microsoft Excel desktop was unavailable.
 
-## HTML resource link validation
+## Companion and link checks
 
-| Source HTML | Link | Status |
-|---|---|---|
-| resources/crypto-agility-assessment-template.html | ../index.html | OK after upload (existing repository root index.html) |
-| resources/crypto-agility-assessment-template.html | ../downloads/secureazcloud-crypto-agility-assessment-template-v1.0.xlsx | OK |
-| resources/crypto-agility-assessment-template.html | ../downloads/secureazcloud-crypto-agility-assessment-template-v1.0.pdf | OK |
-| resources/crypto-agility-assessment-template.html | ../downloads/secureazcloud-crypto-agility-assessment-template-v1.0.csv | OK |
-| resources/pqc-cloud-workload-identity-migration-checklist.html | ../index.html | OK after upload (existing repository root index.html) |
-| resources/pqc-cloud-workload-identity-migration-checklist.html | ../downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.xlsx | OK |
-| resources/pqc-cloud-workload-identity-migration-checklist.html | ../downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.pdf | OK |
-| resources/pqc-cloud-workload-identity-migration-checklist.html | ../downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.csv | OK |
-| resources/scada-ics-pqc-migration-continuity-checklist.html | ../index.html | OK after upload (existing repository root index.html) |
-| resources/scada-ics-pqc-migration-continuity-checklist.html | ../downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.xlsx | OK |
-| resources/scada-ics-pqc-migration-continuity-checklist.html | ../downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.pdf | OK |
-| resources/scada-ics-pqc-migration-continuity-checklist.html | ../downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.csv | OK |
-| resources/source-map-addendum.html | ../index.html | OK after upload (existing repository root index.html) |
-| resources/source-map-addendum.html | https://csrc.nist.gov/pubs/fips/203/final | external |
-| resources/source-map-addendum.html | https://csrc.nist.gov/pubs/fips/204/final | external |
-| resources/source-map-addendum.html | https://csrc.nist.gov/pubs/fips/205/final | external |
-| resources/source-map-addendum.html | https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc | external |
-| resources/source-map-addendum.html | https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.39.pdf | external |
-| resources/source-map-addendum.html | https://content.govdelivery.com/accounts/USDHSCISA/bulletins/405c246 | external |
-| resources/source-map-addendum.html | https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography | external |
-| resources/source-map-addendum.html | https://www.cisa.gov/resources-tools/resources/post-quantum-considerations-operational-technology | external |
-| resources/source-map-addendum.html | https://csrc.nist.gov/pubs/sp/800/82/r3/final | external |
-| resources/source-map-addendum.html | https://csrc.nist.gov/publications/search?keywords-lg=800-161 | external |
-| resources/source-map-addendum.html | https://www.nist.gov/cyberframework | external |
+All four current workbook families include XLSX, CSV and PDF. Local relative-link validation checked 224 links with zero unresolved targets. PDF pages were rendered and visually reviewed. Historical download content is preserved; attribution metadata is standardized to Ankit Gupta.
 
-## Index snippet link validation
+## SHA-256 for current downloads
 
-| Link | Status |
-|---|---|
-| resources/crypto-agility-assessment-template.html | OK |
-| downloads/secureazcloud-crypto-agility-assessment-template-v1.0.xlsx | OK |
-| downloads/secureazcloud-crypto-agility-assessment-template-v1.0.pdf | OK |
-| downloads/secureazcloud-crypto-agility-assessment-template-v1.0.csv | OK |
-| resources/pqc-cloud-workload-identity-migration-checklist.html | OK |
-| downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.xlsx | OK |
-| downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.pdf | OK |
-| downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.csv | OK |
-| resources/scada-ics-pqc-migration-continuity-checklist.html | OK |
-| downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.xlsx | OK |
-| downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.pdf | OK |
-| downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.csv | OK |
-
-## File checksums
-
-| File | Size Bytes | SHA-256 |
+| File | Bytes | SHA-256 |
 |---|---:|---|
-| GITHUB-UPLOAD-INSTRUCTIONS.md | 3370 | `4817b21e37ed35389433d0ff6d440e4608cf3fd54194db173d77986c4628e613` |
-| README-ADD-ON.md | 1553 | `14b50cfb28ebd0e7778bd340f7ad7df135412d603be23548447b587fb5986144` |
-| downloads/secureazcloud-crypto-agility-assessment-template-v1.0.csv | 634 | `10ba9a6cd0aa4c6a3ab571fe50831ba89853da7b635d1d64c426e80794807307` |
-| downloads/secureazcloud-crypto-agility-assessment-template-v1.0.pdf | 10568 | `58655f7d1e6a1f07052b46d9b9854b73af23fb78abe3b6b8278367cae669d64e` |
-| downloads/secureazcloud-crypto-agility-assessment-template-v1.0.xlsx | 28320 | `a36747dd8fdd93a09be556087b27294e10603843923c967996c3f20b83f21d4d` |
-| downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.csv | 633 | `47a4114ebcc7fd1aa0ab60039a4ea5929b7fefdf67162a5a6c6cdc1abb057774` |
-| downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.pdf | 9771 | `1a9e749f2c30dbc2a8fe0069d6d0ad912801970c788d502b3898c135bdda8280` |
-| downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v1.0.xlsx | 17403 | `07471e40353f1ff896a2fcdc7e2d2792b1e6c58ec75d8265bce88c0393ba32b2` |
-| downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.csv | 747 | `0c485dca6de0c16d7a78ac5e7ef9737964bb4d13d11a49382e99f4294aa0de98` |
-| downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.pdf | 9338 | `6d69fcba2c465dd572a0db7dea2aa3fe5c6b8c858bd6dd7990472c82026a9bb3` |
-| downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v1.0.xlsx | 15317 | `3fd0b87b788719a0fe433799c4d98fdcda698d872ea6a899993ff9f0beae40c0` |
-| index-additions-snippet.html | 2191 | `39f818d460a26361bae468a13358cff7ee0cd9e71c5c85a5efc906b528c63d33` |
-| release-notes-v1.1.0.md | 924 | `fd786f2074897d8265182ed378234f1c8adc82410724ef8a4694eec8c61841a5` |
-| resources/crypto-agility-assessment-template.html | 6045 | `2a9cbc04f10a53091d733d66e0c3e038fb1af8590ec38fffdc63fe331eed7a26` |
-| resources/pqc-cloud-workload-identity-migration-checklist.html | 6299 | `bf6de7a715ad16b0b22b926dbef68637cfb5fcea68c425e40c261d442433d578` |
-| resources/scada-ics-pqc-migration-continuity-checklist.html | 6406 | `d75c9848fd5e402cc3cc92fc1abd5b1db6ed75c919aa7dee6b88e8149fc5ab3d` |
-| resources/source-map-addendum.html | 6308 | `d94627fd67f9353213d55d991d6dbf0de46ab936e4e9afcc0cdc9068c1488537` |
-| source-map-addendum.json | 5452 | `b8dd51866777c34ac54ed9d7de1ac4d1ca4505d1619769d1591043c71a1a1e22` |
+| [secureazcloud-pqc-crypto-inventory-template-v2.0.xlsx](downloads/secureazcloud-pqc-crypto-inventory-template-v2.0.xlsx) | 456872 | `242e25d17f88bec3a919664f6abebdc31872ca9a5e07257547595f6803777137` |
+| [secureazcloud-pqc-crypto-inventory-template-v2.0.csv](downloads/secureazcloud-pqc-crypto-inventory-template-v2.0.csv) | 7088 | `e7ca2de79b4060dfa30c124ea66e932ee773d9409dbc32d131be467414603145` |
+| [secureazcloud-pqc-crypto-inventory-template-v2.0.pdf](downloads/secureazcloud-pqc-crypto-inventory-template-v2.0.pdf) | 111745 | `50e16d51df1d1ee5470f0a5a3f27b6ae3518c0b765478d31bb60164e4685af3b` |
+| [secureazcloud-crypto-agility-assessment-template-v2.0.xlsx](downloads/secureazcloud-crypto-agility-assessment-template-v2.0.xlsx) | 56591 | `ab0b2a6fceaf708683ac8c679d20ce2d28a2acb3bdee638ad3373e90454da75e` |
+| [secureazcloud-crypto-agility-assessment-template-v2.0.csv](downloads/secureazcloud-crypto-agility-assessment-template-v2.0.csv) | 5449 | `4cb264098af1cc558d4ce6f760e3f55bc3079b444d511b2ad6517505cff680bc` |
+| [secureazcloud-crypto-agility-assessment-template-v2.0.pdf](downloads/secureazcloud-crypto-agility-assessment-template-v2.0.pdf) | 98803 | `8caf555dd1a201f613a30b80580e58389b40020bb0c5ec207813929762023af2` |
+| [secureazcloud-pqc-cloud-workload-identity-checklist-v2.0.xlsx](downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v2.0.xlsx) | 39555 | `90491f7f8cf21130af9462abcac966cdbb22c1ccc44689df5664a6189729d731` |
+| [secureazcloud-pqc-cloud-workload-identity-checklist-v2.0.csv](downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v2.0.csv) | 17063 | `5d7c2f76c119b57f00afd71b9563d20892d69e750d9c7c94d4e463ad60f7d7c9` |
+| [secureazcloud-pqc-cloud-workload-identity-checklist-v2.0.pdf](downloads/secureazcloud-pqc-cloud-workload-identity-checklist-v2.0.pdf) | 101760 | `12e0480636f169a3972816694686786b7a2ab47012dc0b5fe86d0547ad4b6fea` |
+| [secureazcloud-scada-ics-pqc-continuity-checklist-v2.0.xlsx](downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v2.0.xlsx) | 35603 | `669dca7740e2067d252ad10b2bd4d3f5bac13c5f2bb346322f17fe2ea3942474` |
+| [secureazcloud-scada-ics-pqc-continuity-checklist-v2.0.csv](downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v2.0.csv) | 13367 | `a9cfcc76b56ba168eadb8c1d93e154cd01044ccc75a3b552c72ea0eaf0820c59` |
+| [secureazcloud-scada-ics-pqc-continuity-checklist-v2.0.pdf](downloads/secureazcloud-scada-ics-pqc-continuity-checklist-v2.0.pdf) | 94568 | `c236a33544d8f725995f38ec8dd5737ed9bab96978fc59374709d6224b9912ff` |
 
-## Deployment note
+## Source review
 
-GitHub Pages deployment timing and repository settings are outside this package. After upload, allow GitHub Pages to redeploy and then test the URLs listed in `GITHUB-UPLOAD-INSTRUCTIONS.md`.
+Official NIST sources were checked as of 2026-09-29. Final, draft, preliminary and selected-for-standardization statuses are distinguished. Annual roadmap phases, review cadence and score weights are Hub planning choices. See the [source/status guide](resources/nist-2026-and-beyond.html).
+
+## Scope boundaries
+
+No production systems were scanned, no real-world cryptographic migration was performed, and no native Excel certification is asserted. GitHub Pages build status is verified separately after the repository commit.

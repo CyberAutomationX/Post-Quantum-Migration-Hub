@@ -962,6 +962,7 @@
       }
     }
   </style>
+<meta name="author" content="Ankit Gupta">
 </head>
 <body>
   <header class="topbar">
@@ -986,8 +987,8 @@
 
   <aside class="announcement" aria-label="Hub update">
     <div class="announcement-inner">
-      <div><span class="new-pill">New</span>Version 1.1 updated with Cloud Identity Checklist and crypto-agility assessment guidance</div>
-      <a class="download" href="downloads/secureazcloud-pqc-crypto-inventory-template.xlsx">Download XLSX</a>
+      <div><span class="new-pill">New</span>Version 2.0: four updated workbooks for 2026, 2027, and later migration planning</div>
+      <a class="download" href="downloads/secureazcloud-pqc-crypto-inventory-template-v2.0.xlsx">Download XLSX</a>
     </div>
   </aside>
 
@@ -1000,10 +1001,10 @@
           Implementation guidance, assessment frameworks, migration playbooks, and operational checklists for organizations preparing for NIST-standardized Post-Quantum Cryptography.
         </p>
         <div class="meta-line">
-          SecureAzCloud | Vendor-neutral | NIST-aligned | Version 1.1 | Updated 2026-06-07
+          SecureAzCloud | Vendor-neutral | NIST-aligned | Version 2.0 | Updated 2026-09-29
         </div>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="downloads/secureazcloud-pqc-crypto-inventory-template.xlsx">Download Workbook</a>
+          <a class="btn btn-primary" href="downloads/secureazcloud-pqc-crypto-inventory-template-v2.0.xlsx">Download Workbook</a>
           <a class="btn btn-secondary" href="#downloads">View Resources</a>
         </div>
       </div>
@@ -1032,6 +1033,7 @@
         <a href="resources/scada-ics-pqc-checklist.html">SCADA/ICS Checklist</a>
         <a href="resources/crypto-agility-assessment-template.html">Crypto Agility Assessment</a>
         <a href="resources/pqc-cloud-workload-identity-migration-checklist.html">Cloud Identity Checklist</a>
+        <a href="resources/nist-2026-and-beyond.html">2026 and Beyond</a>
         <a href="#reference-map">Reference Map</a>
       </div>
 
@@ -1048,9 +1050,9 @@
         <aside class="status-box" data-reveal aria-label="Hub scope summary">
           <p>Designed for enterprise teams that need usable artifacts, not just theory.</p>
           <div class="status-grid">
-            <div class="status-item"><strong>7</strong><span>Resources</span></div>
+            <div class="status-item"><strong>4</strong><span>Workbooks</span></div>
             <div class="status-item"><strong>4</strong><span>Domains</span></div>
-            <div class="status-item"><strong>1.1</strong><span>Version</span></div>
+            <div class="status-item"><strong>2.0</strong><span>Version</span></div>
             <div class="status-item"><strong>2026</strong><span>Updated</span></div>
           </div>
         </aside>
@@ -1060,14 +1062,14 @@
     <section id="downloads" class="section">
       <div class="section-head" data-reveal>
         <h2>Resource downloads</h2>
-        <p>Templates and checklists for teams building a measured migration path from today’s cryptography to quantum-resistant standards.</p>
+        <p>Templates and checklists for teams building a measured migration path from today’s cryptography to quantum-resistant standards. All four current workbooks are version 2.0; earlier downloads remain available as historical artifacts.</p>
       </div>
 
       <div class="resource-grid">
         <article class="resource" data-reveal>
           <h3>Crypto Inventory Template</h3>
-          <p>Excel workbook with inventory fields, dropdowns, risk scoring, priority formulas, readiness checklist, cloud/IAM playbook, OT/ICS checklist, and reference map.</p>
-          <a class="btn" href="downloads/secureazcloud-pqc-crypto-inventory-template.xlsx">Download XLSX</a>
+          <p>Version 2.0 inventory with ownership, cryptographic roles, lifetimes, evidence, dependency tracking, risk prioritization, and migration planning.</p>
+          <a class="btn" href="downloads/secureazcloud-pqc-crypto-inventory-template-v2.0.xlsx">Download XLSX</a>
         </article>
 
         <article id="readiness" class="resource" data-reveal>
@@ -1096,20 +1098,31 @@
 
         <article id="identity" class="resource" data-reveal>
           <h3>Cloud Identity Checklist</h3>
-          <p>Identity-focused checklist for Entra ID, federation, SSO, workload identities, token signing, certificate chains, conditional access, and machine-to-machine trust.</p>
+          <p>Version 2.0 checklist for federation, workload identities, token/assertion signing, certificate chains, provider dependencies, and migration tests.</p>
           <a class="btn" href="resources/pqc-cloud-workload-identity-migration-checklist.html">Open Identity Checklist</a>
         </article>
 
         <article class="resource" data-reveal>
           <h3>CSV Inventory Template</h3>
           <p>Lightweight CSV version of the cryptographic inventory fields for teams that want to import data into Power BI, GRC tooling, or migration trackers.</p>
-          <a class="btn" href="downloads/secureazcloud-pqc-crypto-inventory-template.csv">Download CSV</a>
+          <a class="btn" href="downloads/secureazcloud-pqc-crypto-inventory-template-v2.0.csv">Download CSV</a>
         </article>
 
         <article class="resource" data-reveal>
           <h3>Reference Map</h3>
           <p>Mapped guidance areas across NIST post-quantum standards, federal migration expectations, enterprise implementation dependencies, and operational control families.</p>
           <a class="btn" href="#reference-map">Open Map</a>
+        </article>
+
+        <article class="resource" data-reveal>
+          <h3>SCADA/ICS Continuity Workbook</h3>
+          <p>Version 2.0 workbook for OT inventory, firmware and trust lifetimes, latency tests, vendor roadmaps, safety gates, rollback, and replacement planning.</p>
+          <a class="btn" href="resources/scada-ics-pqc-migration-continuity-checklist.html">Open Continuity Checklist</a>
+        </article>
+        <article class="resource" data-reveal>
+          <h3>2026 and Beyond Guide</h3>
+          <p>Source status, threat coverage, 2026 baseline, 2027 execution, and later migration horizons. Final standards, draft proposals, and hub targets are distinguished.</p>
+          <a class="btn" href="resources/nist-2026-and-beyond.html">Open Planning Guide</a>
         </article>
       </div>
     </section>
@@ -1217,6 +1230,12 @@
       </div>
     </section>
 
+    <section class="section" id="currency">
+      <h2>Current evidence. A plan that can evolve.</h2>
+      <div class="callout"><strong>Sources reviewed 2026-09-29.</strong> Final FIPS 203/204/205 and NIST CSWP 39 Update 1 inform this release. NIST IR 8547 transition dates remain draft proposals. The 2026 and 2027 milestones in this hub are organization-adaptable planning targets, not universal NIST deadlines.</div>
+      <p>Review the <a href="resources/reference-map.html"><strong>source status register</strong></a>, <a href="https://github.com/CyberAutomationX/Post-Quantum-Migration-Hub/blob/main/release-notes-v2.0.0.md"><strong>release notes</strong></a>, <a href="https://github.com/CyberAutomationX/Post-Quantum-Migration-Hub/blob/main/FINAL-REPORT-v2.0.0.md"><strong>final update report</strong></a>, and <a href="https://github.com/CyberAutomationX/Post-Quantum-Migration-Hub/blob/main/VALIDATION-REPORT.md"><strong>validation report</strong></a>. Review quarterly and when standards, errata, protocols, suppliers, or threats change; next planned review: 2026-12-29. Future recommendations are monitored, not assumed known.</p>
+      <p>This independent planning aid is not a NIST publication, certification, compliance determination, or agency endorsement. Risk scoring and schedule targets are hub heuristics requiring local approval.</p>
+    </section>
     <section class="section" id="reference-map">
       <div class="section-head" data-reveal>
         <h2>Reference map</h2>
@@ -1228,7 +1247,7 @@
         <a href="https://csrc.nist.gov/pubs/fips/204/final" rel="noopener noreferrer"><strong>FIPS 204 ML-DSA</strong><span>Open</span></a>
         <a href="https://csrc.nist.gov/pubs/fips/205/final" rel="noopener noreferrer"><strong>FIPS 205 SLH-DSA</strong><span>Open</span></a>
         <a href="https://www.cisa.gov/quantum" rel="noopener noreferrer"><strong>CISA Quantum Readiness</strong><span>Open</span></a>
-        <a href="https://www.whitehouse.gov/briefing-room/presidential-actions/2022/05/04/national-security-memorandum-on-promoting-united-states-leadership-in-quantum-computing-while-mitigating-risks-to-vulnerable-cryptographic-systems/" rel="noopener noreferrer"><strong>NSM-10 Quantum Migration Direction</strong><span>Open</span></a>
+        <a href="resources/reference-map.html"><strong>Source Status and Artifact Crosswalk</strong><span>Open</span></a>
       </div>
     </section>
   </main>
@@ -1239,12 +1258,13 @@
         <h2>Start with the inventory. Build the roadmap from evidence.</h2>
         <p>Download the workbook, identify priority systems, and use the linked playbooks to turn cryptographic visibility into a practical migration plan.</p>
       </div>
-      <a class="btn btn-primary" href="downloads/secureazcloud-pqc-crypto-inventory-template.xlsx">Download Workbook</a>
+      <a class="btn btn-primary" href="downloads/secureazcloud-pqc-crypto-inventory-template-v2.0.xlsx">Download Workbook</a>
     </div>
   </section>
 
   <footer>
-    SecureAzCloud Post-Quantum Migration Resource Hub. Vendor-neutral public guidance for post-quantum readiness.
+  <p>Author and maintainer: Ankit Gupta</p>
+    SecureAzCloud Post-Quantum Migration Resource Hub v2.0.0 | Reviewed 2026-09-29. Independent, vendor-neutral planning guidance; no agency endorsement.
   </footer>
 
   <script>

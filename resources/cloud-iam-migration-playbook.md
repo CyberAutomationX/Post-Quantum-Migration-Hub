@@ -1,7 +1,9 @@
 # SecureAzCloud Cloud/IAM PQC Migration Playbook
 
-Version: 1.0  
-Release date: 2026-06-07
+Author and maintainer: Ankit Gupta
+
+Version: 2.0  
+Release date: 2026-09-29
 
 This playbook helps cloud, IAM, application, and security teams convert PQC readiness into a controlled migration program.
 
@@ -38,18 +40,37 @@ This playbook helps cloud, IAM, application, and security teams convert PQC read
 - Maintain backward-compatible rollout and rollback paths.
 - Require supplier disclosures for cryptographic dependencies, update mechanisms, support windows, and PQC roadmaps.
 
+## Cloud and identity controls for 2026 and later
+
+| Focus | Planning control | Evidence |
+|---|---|---|
+| Separate trust layers | Inventory TLS key establishment, TLS authentication, token/assertion signatures, encryption/key wrapping, workload credentials, and artifact signatures independently. A PQC TLS handshake does not prove token-signing migration. | Layered dependency map and algorithm-role inventory. |
+| Tokens and assertions | Apply final NIST IR 8587 considerations to long-lived assertions, federation metadata, signed credentials, verification lifetime, issuer/verifier support, and key rollover. Short-lived tokens still depend on long-lived trust infrastructure. | Issuer-to-verifier map, protocol profile status, lifetime/risk assessment. |
+| Protocol readiness | Record the specific protocol/profile revision and status, client/server support, certificate/key formats, and provider release. Do not infer protocol support from an algorithm standard. | Supported version matrix and partner acceptance evidence. |
+| Service control boundaries | For SaaS, KMS/HSM, managed identities, federation, and cloud services, distinguish customer-controlled settings from provider-managed cryptography. | Supplier roadmap, responsibility owner, supported configuration, validation evidence. |
+| Pilot failure paths | Test negotiation downgrade, malformed keys/signatures/ciphertexts, unknown key IDs, token/chain size limits, JWKS caching, mixed-version peers, rollover, revocation, and disaster recovery. | Pass/fail criteria, metrics, logs, rollback drill, accountable approval. |
+| 2027 and later operations | Stage supported migrations by risk; track negotiated algorithms, signing/verifier drift, dependencies, outages, and exception expiry. Retire legacy use only after all relying parties and recovery paths are verified. | Continuous discovery and migration evidence dashboard. |
+
+**Source review:** 2026-09-29. Final sources, drafts, and hub-defined targets have different authority. See the [2026 and beyond guide](nist-2026-and-beyond.md) and [source status register](reference-map.html). Future recommendations cannot be known in advance. Review quarterly and on standards, protocol, errata, supplier, or threat changes; next planned review: 2026-12-29.
+
 ## Sources
 
-- NIST FIPS 203 — Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM): https://csrc.nist.gov/pubs/fips/203/final
-- NIST FIPS 204 — Module-Lattice-Based Digital Signature Standard (ML-DSA): https://csrc.nist.gov/pubs/fips/204/final
-- NIST FIPS 205 — Stateless Hash-Based Digital Signature Standard (SLH-DSA): https://csrc.nist.gov/pubs/fips/205/final
-- NIST PQC Standardization Project: https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization
-- NIST NCCoE Migration to Post-Quantum Cryptography: https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc
-- NIST CSWP 39 — Considerations for Achieving Crypto Agility: https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.39.pdf
-- NIST Cybersecurity Framework 2.0 announcement and resources: https://www.nist.gov/news-events/news/2024/02/nist-releases-version-20-landmark-cybersecurity-framework
-- NIST SP 800-53 Rev. 5 — Security and Privacy Controls: https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final
-- NIST SP 800-82 Rev. 3 — Guide to Operational Technology Security: https://csrc.nist.gov/pubs/sp/800/82/r3/final
-- NIST SP 800-161 Rev. 1 Update 1 — Cybersecurity Supply Chain Risk Management: https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final
-- CISA — Quantum-Readiness: Migration to Post-Quantum Cryptography: https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography
-- CISA — Post-Quantum Considerations for Operational Technology: https://www.cisa.gov/resources-tools/resources/post-quantum-considerations-operational-technology
-- CISA — Product Categories for Technologies that Use PQC Standards: https://www.cisa.gov/resources-tools/resources/product-categories-technologies-use-post-quantum-cryptography-standards
+Sources reviewed 2026-09-29. See the [full register](reference-map.html) for status and scope.
+
+| ID | Source | Status |
+|---|---|---|
+| N01 | [FIPS 203 ML-KEM; key establishment, parameter sets 512/768/1024; monitor potential errata](https://csrc.nist.gov/pubs/fips/203/final) | Final 2024-08-13; notice 2025-11-17 |
+| N02 | [FIPS 204 ML-DSA; signature generation and verification; monitor potential errata](https://csrc.nist.gov/pubs/fips/204/final) | Final 2024-08-13; notice 2026-07-31 |
+| N03 | [FIPS 205 SLH-DSA; stateless hash-based signatures](https://csrc.nist.gov/pubs/fips/205/final) | Final 2024-08-13 |
+| N04 | [SP 800-227; conforming KEM implementation, randomness, input validation, key destruction, authentication, key derivation/confirmation and multi-algorithm construction](https://csrc.nist.gov/pubs/sp/800/227/final) | Final 2025-09-18 |
+| N05 | [CSWP 39-upd1; governance, inventory, risk-prioritized agility, negotiation, supply chains, APIs, continuous improvement](https://csrc.nist.gov/pubs/cswp/39/upd1/considerations-for-achieving-crypto-agility/final) | Final 2025-12-19; updated 2026-06-29 |
+| N06 | [IR 8547; HNDL, signature and code-verification distinctions, draft transition tables](https://csrc.nist.gov/pubs/ir/8547/ipd) | Initial public draft 2024-11-12 |
+| N16 | [IR 8587; signed tokens/assertions, key lifecycle, verification, automated workload identity token use, Section 7.7 PQC interoperability constraints](https://csrc.nist.gov/pubs/ir/8587/final) | Final 2026-09-15 |
+| N17 | [SP 800-228-upd1; API lifecycle risks and controls](https://csrc.nist.gov/pubs/sp/800/228/upd1/final) | Final; original 2025-06-27, updated 2026-03-13 |
+| N22 | [SP 800-204A; service-mesh security architecture](https://csrc.nist.gov/pubs/sp/800/204/a/final) | Final 2020-05-27 |
+| N23 | [SP 800-204B; service-mesh authentication/authorization](https://csrc.nist.gov/pubs/sp/800/204/b/final) | Final 2021-08 |
+| N24 | [CAVP program; algorithm validation is prerequisite to, not replacement for, module validation](https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program) | Official program; updated 2026-09-22 |
+| N25 | [CMVP FAQ; module/version/operating-environment verification, protocol/product validation boundary, FIPS140-2 active-list transition](https://csrc.nist.gov/Projects/cryptographic-module-validation-program/faqs) | Official FAQ checked 2026-09-29 |
+| N26 | [CMVP validated modules; inspect certificate/security policy and active/historical/revoked status](https://csrc.nist.gov/projects/cryptographic-module-validation-program/validated-modules) | Live certificate registry checked 2026-09-29 |
+
+Independent planning aid; not a NIST publication or endorsement.

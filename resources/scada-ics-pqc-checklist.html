@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>SecureAzCloud SCADA/ICS PQC Readiness Checklist</title>
   <link rel="stylesheet" href="../assets/style.css">
+<meta name="author" content="Ankit Gupta">
 </head>
 <body>
 <header>
@@ -15,8 +16,8 @@
       <span class="badge">SecureAzCloud</span>
       <span class="badge">Vendor-neutral</span>
       <span class="badge">NIST-aligned</span>
-      <span class="badge">Version 1.0</span>
-      <span class="badge">Updated 2026-06-07</span>
+      <span class="badge">Version 2.0</span>
+      <span class="badge">Updated 2026-09-29</span>
     </div>
   </div>
 </header>
@@ -86,31 +87,17 @@
 </table>
 </section>
 
-<section id="references">
-<h2>Reference sources</h2>
-<table>
-<thead><tr><th>Source</th><th>Public URL</th></tr></thead>
-<tbody>
-<tr><td>NIST FIPS 203 — Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM)</td><td><a href="https://csrc.nist.gov/pubs/fips/203/final">https://csrc.nist.gov/pubs/fips/203/final</a></td></tr>
-<tr><td>NIST FIPS 204 — Module-Lattice-Based Digital Signature Standard (ML-DSA)</td><td><a href="https://csrc.nist.gov/pubs/fips/204/final">https://csrc.nist.gov/pubs/fips/204/final</a></td></tr>
-<tr><td>NIST FIPS 205 — Stateless Hash-Based Digital Signature Standard (SLH-DSA)</td><td><a href="https://csrc.nist.gov/pubs/fips/205/final">https://csrc.nist.gov/pubs/fips/205/final</a></td></tr>
-<tr><td>NIST PQC Standardization Project</td><td><a href="https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization">https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization</a></td></tr>
-<tr><td>NIST NCCoE Migration to Post-Quantum Cryptography</td><td><a href="https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc">https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc</a></td></tr>
-<tr><td>NIST CSWP 39 — Considerations for Achieving Crypto Agility</td><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.39.pdf">https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.39.pdf</a></td></tr>
-<tr><td>NIST Cybersecurity Framework 2.0 announcement and resources</td><td><a href="https://www.nist.gov/news-events/news/2024/02/nist-releases-version-20-landmark-cybersecurity-framework">https://www.nist.gov/news-events/news/2024/02/nist-releases-version-20-landmark-cybersecurity-framework</a></td></tr>
-<tr><td>NIST SP 800-53 Rev. 5 — Security and Privacy Controls</td><td><a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final">https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final</a></td></tr>
-<tr><td>NIST SP 800-82 Rev. 3 — Guide to Operational Technology Security</td><td><a href="https://csrc.nist.gov/pubs/sp/800/82/r3/final">https://csrc.nist.gov/pubs/sp/800/82/r3/final</a></td></tr>
-<tr><td>NIST SP 800-161 Rev. 1 Update 1 — Cybersecurity Supply Chain Risk Management</td><td><a href="https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final">https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final</a></td></tr>
-<tr><td>CISA — Quantum-Readiness: Migration to Post-Quantum Cryptography</td><td><a href="https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography">https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography</a></td></tr>
-<tr><td>CISA — Post-Quantum Considerations for Operational Technology</td><td><a href="https://www.cisa.gov/resources-tools/resources/post-quantum-considerations-operational-technology">https://www.cisa.gov/resources-tools/resources/post-quantum-considerations-operational-technology</a></td></tr>
-<tr><td>CISA — Product Categories for Technologies that Use PQC Standards</td><td><a href="https://www.cisa.gov/resources-tools/resources/product-categories-technologies-use-post-quantum-cryptography-standards">https://www.cisa.gov/resources-tools/resources/product-categories-technologies-use-post-quantum-cryptography-standards</a></td></tr>
-</tbody>
-</table>
-<p class="small">This resource hub is an independent, vendor-neutral planning aid. It is not a NIST, CISA, or government publication and does not imply endorsement by any public agency.</p>
+<section class="currency-note">
+<h2>2026 baseline, 2027 execution, and ongoing review</h2>
+<p><strong>Version 2.0 | Sources reviewed 2026-09-29.</strong> This independent hub translates published standards and guidance into planning controls. Final publications, drafts, and hub-defined targets have different authority. Future recommendations cannot be known in advance.</p>
+<p>Use the <a href="nist-2026-and-beyond.html">2026 and beyond planning guide</a> and <a href="reference-map.html">source status register</a> for publication status, transition assumptions, threat coverage, and review triggers. Review quarterly and when a standard, protocol, erratum, supplier commitment, or threat changes; next scheduled review: 2026-12-29.</p>
 </section>
+<section><h2>OT continuity controls for 2026 and later</h2><table><thead><tr><th>Focus</th><th>Planning control</th><th>Evidence</th></tr></thead><tbody><tr><td>Publication status</td><td>Use SP 800-82 Rev. 3 as the final baseline; track Rev. 4 as an initial public draft as of this review. Do not treat the draft as a mandatory replacement.</td><td>Standards watch item, gap assessment, review owner.</td></tr><tr><td>Long device and signature lifetimes</td><td>Inventory secure boot, firmware verification, trust-anchor updateability, recovery images, engineering tools, offline devices, and hardware lifecycles.</td><td>Vendor-confirmed key/signature-size limits and supported update path.</td></tr><tr><td>Passive evidence first</td><td>Record discovery method and confidence. Avoid active probing that may disrupt deterministic control or safety systems.</td><td>Passive discovery/configuration review and engineering-approved test method.</td></tr><tr><td>Real-time validation</td><td>Test worst-case latency, jitter, packet loss, fragmentation, retransmission, reconnect storms, CPU/memory, failover, and watchdog/safety behavior.</td><td>Engineering-approved limits and representative lab results.</td></tr><tr><td>Gateway boundaries</td><td>Record which link a PQC-capable gateway protects and where plaintext or classical cryptography remains. Segmentation and gateways do not provide end-to-end PQC automatically.</td><td>Conduit diagram and documented residual risk.</td></tr><tr><td>Change and recovery</td><td>Require safety/operations approval, vendor support, maintenance window, backup restoration, rollback, monitoring, and time-limited legacy exception.</td><td>MOC record, rollback drill, outage/fail-safe criteria, funded replacement plan.</td></tr></tbody></table></section>
+<section id="references"><h2>Source status and alignment</h2><p>Reviewed 2026-09-29. These sources inform hub-defined planning controls; drafts are tracked separately from the final baseline. See the <a href="reference-map.html">complete source register</a>.</p><div class="table-scroll"><table><thead><tr><th>ID</th><th>Publication and use</th><th>Status at review</th><th>Reviewed</th></tr></thead><tbody><tr><td>N01</td><td><a href="https://csrc.nist.gov/pubs/fips/203/final">FIPS 203 ML-KEM; key establishment, parameter sets 512/768/1024; monitor potential errata</a></td><td>Final 2024-08-13; notice 2025-11-17</td><td>2026-09-29</td></tr><tr><td>N02</td><td><a href="https://csrc.nist.gov/pubs/fips/204/final">FIPS 204 ML-DSA; signature generation and verification; monitor potential errata</a></td><td>Final 2024-08-13; notice 2026-07-31</td><td>2026-09-29</td></tr><tr><td>N03</td><td><a href="https://csrc.nist.gov/pubs/fips/205/final">FIPS 205 SLH-DSA; stateless hash-based signatures</a></td><td>Final 2024-08-13</td><td>2026-09-29</td></tr><tr><td>N05</td><td><a href="https://csrc.nist.gov/pubs/cswp/39/upd1/considerations-for-achieving-crypto-agility/final">CSWP 39-upd1; governance, inventory, risk-prioritized agility, negotiation, supply chains, APIs, continuous improvement</a></td><td>Final 2025-12-19; updated 2026-06-29</td><td>2026-09-29</td></tr><tr><td>N06</td><td><a href="https://csrc.nist.gov/pubs/ir/8547/ipd">IR 8547; HNDL, signature and code-verification distinctions, draft transition tables</a></td><td>Initial public draft 2024-11-12</td><td>2026-09-29</td></tr><tr><td>N13</td><td><a href="https://csrc.nist.gov/pubs/sp/800/82/r3/final">SP 800-82 Rev. 3; OT performance, reliability, safety and controls</a></td><td>Final 2023-09-28</td><td>2026-09-29</td></tr><tr><td>N14</td><td><a href="https://csrc.nist.gov/pubs/sp/800/82/r4/ipd">SP 800-82 Rev. 4; CSF2 alignment, asset management, monitoring, OT/IIoT/cloud, system-management security</a></td><td>Initial public draft 2026-09-21</td><td>2026-09-29</td></tr><tr><td>N15</td><td><a href="https://csrc.nist.gov/pubs/sp/1339/final">SP 1339; backups in OT change and recovery practice</a></td><td>Final 2026-06-17</td><td>2026-09-29</td></tr><tr><td>N29</td><td><a href="https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final">SP 800-161 Rev. 1-upd1; supplier risk and dependency governance</a></td><td>Final; original 2022-05, update 2024-11-01</td><td>2026-09-29</td></tr><tr><td>N30</td><td><a href="https://csrc.nist.gov/pubs/sp/800/230/ipd">SP 800-230; additional limited-signature SLH-DSA parameter sets, software/firmware/certificate watch item</a></td><td>Initial public draft 2026-04-13</td><td>2026-09-29</td></tr></tbody></table></div><p>This is an independent planning aid, not a NIST publication, certification, compliance determination, or agency endorsement.</p></section>
 </main>
 <footer>
-  SecureAzCloud PQC Migration Resource Hub v1.0. Use as a planning and communication resource; adapt controls and sequencing to organizational risk, architecture, and operational constraints.
+  <p>Author and maintainer: Ankit Gupta</p>
+  SecureAzCloud PQC Migration Resource Hub v2.0. Use as a planning and communication resource; adapt controls and sequencing to organizational risk, architecture, and operational constraints.
 </footer>
 </body>
 </html>
